@@ -1,0 +1,86 @@
+{% extends "includes/layout.html" %}
+
+	{% block content %}
+		<div class="col-lg-12 col-md-12 col-sm-12 col-12">
+	
+			<script type="text/javascript" src="{{ URLROOT }}/js/register.js"></script>	
+
+			<div class="row justify-content-center mt-4 mb-4">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-12">
+					<form id="register_form" class="card">
+						
+						<div class="card-header bg-dark text-primary">
+							<h1 class="text-center text-uppercase">Register</h1>
+							<small>Please fill out this form to register with us!</small>
+							<div id="message"></div>
+						</div>
+						
+						<div class="card-body">
+							<div class="form-group">
+								<input type="hidden" name="__csrf_value" id="csrf_value" value="{{ data.getCsrfToken }}">
+								<div class="row justify-content-center">
+									<div class="col-lg-6 col-md-6 col-sm-12 col-12">
+										<label for="firstname" class="col-form-label">First name: *</label>
+										<input type="text" name="firstname" id="firstname" class="form-control" required>
+									</div>
+									<div class="col-lg-6 col-md-6 col-sm-12 col-12">
+										<label for="lastname" class="col-form-label">Last name: *</label>
+										<input type="text" name="lastname" id="lastname" class="form-control" required>
+									</div>
+								</div>
+							</div>
+	                    	<div class="form-group">
+	                    		<label for="gender" class="col-form-label text-md-center">Gender: *</label>
+	                            <div class="row justify-content-center">
+		                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+		                               <div class="form-check text-center">
+		                                    <label class="form-check-label">
+		                                        <input type="radio" class="form-check-input" name="gender" id="gender" value="female">Female
+		                                    </label>
+		                                </div>                                 
+		                            </div>
+		                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">         
+		                               <div class="form-check text-center">
+		                                    <label class="form-check-label">
+		                                        <input type="radio" class="form-check-input" name="gender" id="gender" value="male">Male
+		                                    </label>
+		                                </div>                               
+		                            </div>
+	                            </div> 
+	                    	</div>
+	                    	<div class="form-group">
+	                    		<label for="age" class="col-form-label text-md-center">Age: *</label>
+	                    		<select class="form-control" id="age" name="age">
+	                    			<option></option>
+	                    			{% for i in 2018..1920 %}
+	                    				<option value="{{ i }}">{{ i }}</option>
+	                    			{% endfor %}
+	                    		</select>
+	                    	</div>		
+							<div class="form-group">
+								<label for="email">Email: *</label>
+								<input type="email" name="email" id="email" class="form-control" required>
+							</div>	
+							<div class="form-group">
+								<label for="password">Password: *</label>
+								<input type="password" name="password" id="password" class="form-control" required>
+							</div>	
+							<div class="form-group">
+								<label for="confirm_password">Confirm Password: *</label>
+								<input type="password" name="confirm_password" id="confirm_password" class="form-control" required>
+							</div>
+							<div class="row">
+								<div class="col-md-6 col-sm-12">
+									<input type="submit" name="submit" class="btn btn-primary w-100" id="register_btn" value="REGISTER">
+								</div>
+								<div class="col-md-6 col-sm-12"><a href="{{ URLROOT }}/users/login" class="btn btn-default w-100 text-uppercase">HAVE AN ACCOUNT. LOG IN!</a></div>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>
+			
+		</div>	
+
+	{% endblock %}

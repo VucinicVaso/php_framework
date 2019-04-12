@@ -1,0 +1,72 @@
+{% extends "includes/layout.html" %}
+
+	{% block content %}
+		<div class="col-md-12 col-sm-12 mt-4 mb-4">
+
+			<div class="row">
+
+				<div class="col-md-8 col-sm-12">
+					<div class="card bg-dark text-primary">
+						<div class="card-header">
+							<h1 class="text-center">{{ data.post.title }}</h1>
+							<small>CREATED: <span class="badge badge-secondary">{{ data.post.created_at }}</span></small>
+							<small>BY: <span class="badge badge-secondary"><a href="{{URLROOT}}/users/show/{{ data.post.user_id }}">{{ data.post.username }}</a></span></small>
+						</div>
+						<div class="card-body">
+							<img src="{{ URLROOT }}/{{ data.post.image }}" id="post-image">
+							<p>{{ data.post.body }}</p>
+						</div>
+						<div class="card-footer">
+							<script src="{{ URLROOT }}/js/like.js"></script>
+							<div class="row justify-content-center">
+							{% if data.isLiked %}
+								<div class="col-md-2">
+									<button class="btn btn-link" id="dislike" onclick="dislikePost({{data.post.id}})"><img src="{{ URLROOT }}/images/dislike.png" id="like-btn"></button>
+								</div>							
+							{% else %}
+								<div class="col-md-2">
+									<button class="btn btn-link" id="like" onclick="likePost({{data.post.id}})"><img src="{{ URLROOT }}/images/like.png" id="like-btn"></button>
+								</div>						
+							{% endif %}
+							</div>
+						</div>
+					</div>
+
+					<hr>
+
+					<!-- POST COMMENT -->
+					<script src="{{ URLROOT }}/js/comment.js"></script>
+					<div id="commentMSG">msg</div>
+					<form id="commentForm">
+						<input type="hidden" name="post_id" id="post_id" value="{{ data.post.id }}">
+						<div class="form-group">
+							<label for="comment">Comment:</label>
+							<textarea name="comment" id="comment" class="form-control" required></textarea>
+						</div>
+						<input type="submit" name="submit" value="CREATE" class="btn btn-info w-100">
+					</form>
+					
+				</div>
+
+				<!-- COMMENTS -->
+				<div class="col-md-4 col-sm-12">
+				{% if data.comments is not empty %}
+					{% for comment in data.comments %}
+					<div class="media border p-3">
+						<img src="{{ URLROOT }}\{{ comment.profile_image }}" alt="{{ comment.username }}" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+						<div class="media-body">
+							<h4><a href="{{ URLROOT }}/users/show/{{ comment.id }}">{{ comment.username }}</a> <small><i>Posted on {{ comment.created_at }}</i></small></h4>
+							<hr>
+							<p>{{ comment.comment }}</p>
+						</div>
+					</div>			
+					{% endfor %}
+				{% else %}
+					<div class="alert alert-warning text-center">no comments!</div>
+				{% endif %}
+				</div>
+					
+			</div>
+			
+		</div>
+	{% endblock %}

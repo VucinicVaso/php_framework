@@ -1,0 +1,45 @@
+{% extends "includes/layout.html" %}
+
+	{% block content %} 
+		<div class="col-md-12 col-sm-12 mt-2 mb-2">
+
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<div class="card text-primary">
+						<div class="card-header bg-dark">
+							<h1 class="text-center"><a href="{{ URLROOT }}/users/index"><i class="fas fa-arrow-left"></i></a> EDIT {{ data.post.title }}</h1>
+							<img src="{{ URLROOT }}/{{ data.post.image }}" class="profile-image">
+						</div>
+						<div class="">
+							{% if data.message %}
+								<p class="text-center alert alert-success">{{ data.message }}</p>
+							{% else %}
+							{% endif %}
+						</div>
+						<form action="{{ URLROOT }}/posts/edit/{{ data.post.id }}" method="POST" enctype="multipart/form-data">
+							<div class="card-body bg-dark">
+								<div class="form-group">
+									<label for="title" class="col-form-label">Title: *</label>
+									<input type="text" name="title" id="title" class="form-control" value="{{ data.post.title }}" required>
+								</div>
+								<div class="form-group">
+									<label for="body" class="col-form-label">Body: *</label>
+									<textarea id="body" name="body" class="form-control">{{ data.post.body }}</textarea>
+								</div>
+								<div class="form-group">
+									<label for="profileImage">Image: *</label>
+									<input type="file" name="image" class="form-control">
+								</div>
+							</div>
+							<div class="card-footer bg-dark">
+								<input type="submit" name="submit" value="EDIT" class="btn btn-success w-100">
+							</div>
+						</form>						
+
+					</div>
+
+				</div>
+			</div>
+			
+		</div>	
+	{% endblock %}

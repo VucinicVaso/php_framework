@@ -1,0 +1,38 @@
+{% extends "includes/layout.html" %}
+
+	{% block content %}
+
+		<div class="col-md-12 col-sm-12">
+
+			<h1 class="text-center">LIKES</h1>
+
+			<div class="row mt-2 mb-2">
+
+		{% if data.notifications is not empty %}
+			{% for like in data.notifications %}
+				<div class="col-md-4 col-sm-12">
+					<div class="card bg-dark text-white">
+						<div class="card-header">
+							<img src="{{ URLROOT }}/{{ like.image }}" class="w-100" style="height: 200px;">
+						</div>
+						<div class="card-body">
+							<a href="{{ URLROOT }}/users/show/{{ like.id }}">{{ like.firstname }} {{ like.lastname }}</a>
+							liked your post 
+							<a href="{{ URLROOT }}/posts/show/{{ like.slug }}">{{ like.title }}</a>
+						</div>	
+						<div class="card-footer">
+							<p class="text-center"><b class="text-white">Date: </b> {{ like.created_at }}</p>
+						</div>											
+					</div>
+				</div>
+			{% endfor %}
+		{% else %}
+			<div class="col-md-12 col-sm-12">
+				<p class="text-center alert alert-warning">You have 0 new likes.</p>
+			</div>
+		{% endif %}
+
+			</div>
+		</div>	
+
+	{% endblock %}

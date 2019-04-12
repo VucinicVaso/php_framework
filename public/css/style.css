@@ -1,0 +1,79 @@
+/* layout */
+footer {
+	//position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+	line-height: 60px;
+	background-color: #f5f5f5;
+}
+
+/* error/alert */
+.error-page {
+	margin-top: 20%;
+	margin-bottom: 40%; 
+}
+
+/* users/register - users/login */
+#register {
+	margin-top: 25%;
+}
+
+#register a{
+	font-size: 150px;
+	color: #FFFFFF;
+}
+
+#register_div {
+	min-height: 90vh;
+	background-color: #003366;	
+}
+
+#login_div {
+	min-height: 90vh;
+	background-color: #003399;	
+}
+
+/* users/index */
+.profile-image {
+	width: 100%;
+	height: 200px;
+}
+
+#alerts {
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
+#post-img {
+	width: 100%;
+	height: 300px;
+}
+
+/* users/show */
+#profile {
+	background-image: url("../images/coverImage.jpg");
+	height: 630px; 
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* posts/index */
+#post-photo {
+	width: 100%;
+	height: 400px;
+}
+
+/* posts/show */
+#post-image {
+	width: 100%;
+	height: 400px;
+}
+
+#like-btn {
+	width: 40px; 
+	height: 40px;	
+}

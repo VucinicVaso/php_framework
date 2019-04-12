@@ -1,0 +1,99 @@
+{% extends "includes/layout.html" %}
+
+	{% block content %}
+		<div class="col-md-12 col-sm-12 my-4">
+
+			<div class="row justify-content-center">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-12">
+					<div class="card text-primary">
+						<div class="card-header bg-dark">
+							<h1 class="text-center"><a href="{{ URLROOT }}/users/index"><i class="fas fa-arrow-left"></i></a> EDIT PROFILE</h1>
+							<img src="{{ URLROOT }}/{{ data.user.profile_image }}" class="profile-image">
+						</div>
+						
+						<div class="bg-dark py-2">
+							{% if data.success %}
+								<p class="text-center alert alert-success">{{ data.success }}</p>
+							{% endif %}
+							{% if data.error %}
+ 								<p class="text-center alert alert-danger">{{ data.error }}</p>
+							{% endif %}
+						</div>
+
+						<form action="{{ URLROOT }}/users/edit" method="POST" enctype="multipart/form-data">
+							<input type="hidden" name="__csrf_value" value="{{ data.getCsrfToken }}">
+							<div class="card-body bg-dark">
+								<div class="form-group">
+									<div class="row justify-content-center">
+										<div class="col-lg-6 col-md-6 col-sm-12 col-12">
+											<label for="firstname" class="col-form-label">First name: *</label>
+											<input type="text" name="firstname" id="firstname" class="form-control" value="{{ data.user.firstname }}" required>
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-12 col-12">
+											<label for="lastname" class="col-form-label">Last name: *</label>
+											<input type="text" name="lastname" id="lastname" class="form-control" value="{{ data.user.lastname }}" required>
+										</div>
+									</div>
+								</div>
+		                    	<div class="form-group">
+		                    		<label for="gender" class="col-form-label text-md-center">Gender: *</label>
+		                            <div class="row justify-content-center">
+			                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+			                               <div class="form-check text-center">
+			                                    <label class="form-check-label">
+			                                    	{% if data.user.gender == "female" %}
+			                                        <input type="radio" class="form-check-input" name="gender" id="gender" value="female" checked>Female
+			                                    	{% else %}
+			                                        <input type="radio" class="form-check-input" name="gender" id="gender" value="female">Female
+			                                    	{% endif %}
+			                                    </label>
+			                                </div>                                 
+			                            </div>
+			                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">         
+			                               <div class="form-check text-center">
+			                                    <label class="form-check-label">
+			                                    	{% if data.user.gender == "male" %}
+			                                        <input type="radio" class="form-check-input" name="gender" id="gender" value="male" checked>Male
+			                                    	{% else %}
+			                                        <input type="radio" class="form-check-input" name="gender" id="gender" value="male">Male
+			                                    	{% endif %}
+			                                    </label>
+			                                </div>                               
+			                            </div>
+		                            </div> 
+		                    	</div>
+		                    	<div class="form-group">
+		                    		<label for="age" class="col-form-label text-md-center">Age: *</label>
+		                    		<select class="form-control" id="age" name="age">
+		                    			<option>{{ data.user.age }}</option>
+		                    			<hr />
+		                    			{% for i in 2018..1920 %}
+		                    				<option value="{{ i }}">{{ i }}</option>
+		                    			{% endfor %}
+		                    		</select>
+		                    	</div>		
+								<div class="form-group">
+									<label for="email">Email: *</label>
+									<input type="email" name="email" id="email" class="form-control" value="{{ data.user.email }}" required>
+								</div>	
+								<div class="form-group">
+									<label for="password">New password: *</label>
+									<input type="password" name="password" id="password" class="form-control">
+								</div>	
+								<div class="form-group">
+									<label for="profileImage">Profile image: *</label>
+									<input type="file" name="profileImage" class="form-control">
+								</div>
+							</div>
+							<div class="card-footer bg-dark">
+								<input type="submit" name="submit" value="EDIT" class="btn btn-success w-100">
+							</div>
+						</form>						
+
+					</div>
+
+				</div>
+			</div>
+			
+		</div>	
+	{% endblock %}

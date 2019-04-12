@@ -1,0 +1,220 @@
+{% extends "includes/layout.html" %}
+
+	{% block content %}
+
+		<div class="col-lg-12 col-md-12 col-sm-12 col-12">
+			<div class="row my-2">
+				
+				<div class="col-lg-4 col-md-4 col-sm-12 col-12">				
+					<div class="card bg-dark text-primary">
+						<div class="card-header bg-dark">
+
+							<div class="row justify-content-center my-1">
+							    <div class="col-lg-6 col-md-6 col-sm-12 col-12 bg-primary text-center text-white dropdown-toggle" id="notification" onclick="seeNotifications()" data-toggle="dropdown">NOTIFICATIONS
+				
+							    	<div class="dropdown-menu">
+							    		<a class="dropdown-item" href="{{ URLROOT }}/notifications/likes" id="likeNotification"></a>
+							    		<a class="dropdown-item" href="{{ URLROOT }}/notifications/comments" id="commentNotification"></a>
+							    		<a class="dropdown-item" href="{{ URLROOT }}/notifications/friends" id="friendNotification"></a>
+							    	</div>							    
+							    </div>
+							</div>
+
+							<img src="{{ URLROOT }}/{{ data.user.profile_image }}" class="profile-image">
+
+						</div>						
+						<div class="card-body bg-dark"> 
+							<p>FIRSTNAME: <span class="badge badge-primary float-right">{{ data.user.firstname }}</span></p>
+							<p>LASTNAME: <span class="badge badge-primary float-right">{{ data.user.lastname }}</span></p>
+							<p>USERNAME: <span class="badge badge-primary float-right">{{ data.user.username }}</span></p>	
+							<p>EMAIL: <span class="badge badge-primary float-right">{{ data.user.email }}</span></p>	
+							<p>GENDER: <span class="badge badge-primary float-right">{{ data.user.gender }}</span></p>
+							<p>AGE: <span class="badge badge-primary float-right">{{ data.user.age }}</span></p>		
+							<p>PROFILE CREATED: <span class="badge badge-primary float-right">{{ data.user.created_at }}</span></p>
+							<hr>
+							<p class="btn btn-outline-primary w-100" data-toggle="modal" data-target="#showFriends">FRIENDS</p>
+							<p class="btn btn-outline-primary w-100" data-toggle="modal" data-target="#likedPosts"><i class="far fa-heart"></i> POSTS</p>
+							<p class="btn btn-primary w-100" data-toggle="modal" data-target="#createPost"><i class="far fa-plus-square"></i> POST</p>
+						</div>
+						<div class="card-footer">
+							<form action="{{ URLROOT }}/users/delete" method="POST">
+								<input type="hidden" name="user_id" value="{{ data.user.id }}">
+								<input type="submit" name="submit" value="DELETE PROFILE" class="btn btn-danger w-100">
+							</form>
+						</div>					
+					</div>
+				</div>
+
+				<div class="col-lg-8 col-md-8 col-sm-12 col-12">
+
+				<!-- search -->
+					<div class="row mt-2">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-12">
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" placeholder="Search..." id="searchInput">
+								<div class="input-group-append"><button class="btn btn-primary">SEARCH</button></div>
+							</div>	
+						</div>
+					</div>	
+					<div id="search-result">
+						<!-- search results -->
+					</div>
+					<script src="{{ URLROOT }}/js/search.js"></script>
+					<hr />
+
+				<!-- posts -->
+				{% if data.posts is empty %}					
+				{% else %}
+					{% for post in data.posts %}
+					<div class="card bg-dark text-primary mb-2">
+						<div class="card-header">
+							<h2 class="text-center">{{ post.title }}</h2>
+						</div>
+						<div class="card-body">
+							<img src="{{ URLROOT }}/{{ post.image }}" id="post-img">
+						</div>
+						<div class="card-footer">
+							<div class="row justify-content-center">
+								<div class="col-lg-4 col-md-4 col-sm-12 col-12">
+									<form action="{{ URLROOT }}/posts/delete" method="post">
+										<input type="hidden" name="post_id" value="{{ post.id }}">
+										<button type="submit" class="btn btn-dark w-100"><img src="{{URLROOT}}/images/delete-icon.png" style="height: 50px;"></button>	
+									</form>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-12 col-12">
+									<a href="{{URLROOT}}/posts/show/{{ post.slug }}" class="btn btn-dark w-100"><img src="{{URLROOT}}/images/eye.png" style="height: 50px;"></a>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-12 col-12">
+									<a href="{{URLROOT}}/posts/edit/{{ post.id }}" class="btn btn-dark w-100"><img src="{{URLROOT}}/images/edit.png" style="height: 50px;"></a>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					{% endfor %}				
+				{% endif %}									
+				</div>	
+
+			</div>
+		</div>
+
+		<!-- showFriends Modal -->
+		<div class="modal" id="showFriends">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h4 class="modal-title">FRIENDS</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<!-- Modal body -->
+					<div class="modal-body">
+					{% if data.friends %}
+						{% for friend in data.friends %}
+						<div class="card bg-dark text-primary mb-1">
+							<div class="card-header">
+								<h2 class="text-center">{{ friend.firstname }} {{ friend.lastname }}</h2>
+							</div>
+							<div class="card-body">
+								<img src="{{ URLROOT }}/{{ friend.profile_image }}" class="w-100" style="height: 300px;">
+							</div>	
+							<div class="card-body">
+								<a href="{{ URLROOT }}/users/show/{{ friend.friend_id }}" class="btn btn-primary w-100">VIEW PROFILE</a>
+							</div>															
+						</div>
+						{% endfor %}
+					{% else %}
+					{% endif %}
+					</div>
+					<!-- Modal footer -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- likedPosts Modal -->
+		<div class="modal" id="likedPosts">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h4 class="modal-title">LIKED POSTS</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<!-- Modal body -->
+					<div class="modal-body">
+					{% if data.likedPosts %}
+						{% for likedPost in data.likedPosts %}
+						<div class="card bg-dark text-primary mb-1">
+							<div class="card-header">
+								<h2 class="text-center">{{ friend.title }}</h2>
+							</div>
+							<div class="card-body">
+								<img src="{{ URLROOT }}/{{ likedPost.image }}" class="w-100" style="height: 300px;">
+							</div>	
+							<div class="card-body">
+								<a href="{{ URLROOT }}/posts/show/{{ likedPost.slug }}" class="btn btn-primary w-100">VIEW POST</a>
+							</div>															
+						</div>
+						{% endfor %}
+					{% else %}
+					{% endif %}
+					</div>
+					<!-- Modal footer -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- createPost Modal -->
+		<div class="modal" id="createPost">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h4 class="modal-title">CREATE POST</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<!-- Modal body -->
+					<div class="modal-body">
+						<form id="postForm" enctype="multipart/form-data">
+							<div class="form-group">
+								<label for="title">Title:</label>
+								<input type="text" name="title" class="form-control" id="title" required>
+							</div>
+							<div class="form-group">
+								<label for="body">Body:</label>
+								<textarea name="body" class="form-control" id="body" required></textarea>
+							</div>		
+							<div class="form-group">
+								<label for="image">Image:</label>
+								<input type="file" name="image" id="upload_image">
+							</div>					
+							<div class="row justify-content-center">
+								 <div class="col-md-6">
+								 	<input type="submit" name="submit" value="CREATE" class="btn btn-success w-100">
+								 </div>
+								 <div class="col-md-6">
+								 	<button type="button" class="btn btn-danger w-100" data-dismiss="modal">Close</button>
+								 </div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<div class="row">
+							<div class="col-md-12" id="createPostMSG">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="{{ URLROOT }}/js/post.js"></script>
+		<script src="{{ URLROOT }}/js/notifications.js"></script>
+
+	{% endblock %}
