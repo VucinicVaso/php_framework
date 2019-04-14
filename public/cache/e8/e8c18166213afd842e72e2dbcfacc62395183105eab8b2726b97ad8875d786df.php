@@ -98,17 +98,21 @@ class __TwigTemplate_6f2d414db95b4256d127b6583562dbb9c83ca38c28d16f62986f5ea34f3
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "user", array()), "created_at", array()), "html", null, true);
         echo "</span></p>
 \t\t\t\t\t\t\t<hr>
-\t\t\t\t\t\t\t<p class=\"btn btn-outline-primary w-100\" data-toggle=\"modal\" data-target=\"#showFriends\">FRIENDS</p>
-\t\t\t\t\t\t\t<p class=\"btn btn-outline-primary w-100\" data-toggle=\"modal\" data-target=\"#likedPosts\"><i class=\"far fa-heart\"></i> POSTS</p>
-\t\t\t\t\t\t\t<p class=\"btn btn-primary w-100\" data-toggle=\"modal\" data-target=\"#createPost\"><i class=\"far fa-plus-square\"></i> POST</p>
+\t\t\t\t\t\t\t<p class=\"btn btn-outline-primary w-100 text-white\" data-toggle=\"modal\" data-target=\"#likedPosts\"><i class=\"far fa-heart\"></i> POSTS</p>
+\t\t\t\t\t\t\t<p class=\"btn btn-outline-primary w-100 text-white\" data-toggle=\"modal\" data-target=\"#showFriends\">FRIENDS</p>
+\t\t\t\t\t\t\t<p class=\"btn btn-outline-primary w-100 text-white\" data-toggle=\"modal\" data-target=\"#createPost\"><i class=\"far fa-plus-square\"></i> POST</p>
+\t\t\t\t\t\t\t<a href=\"";
+        // line 38
+        echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
+        echo "/gallery/index\" class=\"btn btn-outline-primary w-100 text-uppercase text-white\">GALLERY</a>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"card-footer\">
 \t\t\t\t\t\t\t<form action=\"";
-        // line 40
+        // line 41
         echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
         echo "/users/delete\" method=\"POST\">
 \t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"user_id\" value=\"";
-        // line 41
+        // line 42
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "user", array()), "id", array()), "html", null, true);
         echo "\">
 \t\t\t\t\t\t\t\t<input type=\"submit\" name=\"submit\" value=\"DELETE PROFILE\" class=\"btn btn-danger w-100\">
@@ -117,7 +121,7 @@ class __TwigTemplate_6f2d414db95b4256d127b6583562dbb9c83ca38c28d16f62986f5ea34f3
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 
-\t\t\t\t<div class=\"col-md-8 col-sm-12\">
+\t\t\t\t<div class=\"col-lg-8 col-md-8 col-sm-12 col-12\">
 
 \t\t\t\t<!-- search -->
 \t\t\t\t\t<div class=\"row mt-2\">
@@ -132,34 +136,34 @@ class __TwigTemplate_6f2d414db95b4256d127b6583562dbb9c83ca38c28d16f62986f5ea34f3
 \t\t\t\t\t\t<!-- search results -->
 \t\t\t\t\t</div>
 \t\t\t\t\t<script src=\"";
-        // line 62
+        // line 63
         echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
         echo "/js/search.js\"></script>
 \t\t\t\t\t<hr />
 
 \t\t\t\t<!-- posts -->
 \t\t\t\t";
-        // line 66
+        // line 67
         if (twig_test_empty(twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "posts", array()))) {
             echo "\t\t\t\t\t
 \t\t\t\t";
         } else {
-            // line 68
+            // line 69
             echo "\t\t\t\t\t";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "posts", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-                // line 69
+                // line 70
                 echo "\t\t\t\t\t<div class=\"card bg-dark text-primary mb-2\">
 \t\t\t\t\t\t<div class=\"card-header\">
 \t\t\t\t\t\t\t<h2 class=\"text-center\">";
-                // line 71
+                // line 72
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", array()), "html", null, true);
                 echo "</h2>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"card-body\">
 \t\t\t\t\t\t\t<img src=\"";
-                // line 74
+                // line 75
                 echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
                 echo "/";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "image", array()), "html", null, true);
@@ -169,22 +173,22 @@ class __TwigTemplate_6f2d414db95b4256d127b6583562dbb9c83ca38c28d16f62986f5ea34f3
 \t\t\t\t\t\t\t<div class=\"row justify-content-center\">
 \t\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-12\">
 \t\t\t\t\t\t\t\t\t<form action=\"";
-                // line 79
+                // line 80
                 echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
                 echo "/posts/delete\" method=\"post\">
 \t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"post_id\" value=\"";
-                // line 80
+                // line 81
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "id", array()), "html", null, true);
                 echo "\">
 \t\t\t\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-dark w-100\"><img src=\"";
-                // line 81
+                // line 82
                 echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
                 echo "/images/delete-icon.png\" style=\"height: 50px;\"></button>\t
 \t\t\t\t\t\t\t\t\t</form>
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-12\">
 \t\t\t\t\t\t\t\t\t<a href=\"";
-                // line 85
+                // line 86
                 echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
                 echo "/posts/show/";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "slug", array()), "html", null, true);
@@ -194,7 +198,7 @@ class __TwigTemplate_6f2d414db95b4256d127b6583562dbb9c83ca38c28d16f62986f5ea34f3
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-12\">
 \t\t\t\t\t\t\t\t\t<a href=\"";
-                // line 88
+                // line 89
                 echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
                 echo "/posts/edit/";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "id", array()), "html", null, true);
@@ -211,11 +215,11 @@ class __TwigTemplate_6f2d414db95b4256d127b6583562dbb9c83ca38c28d16f62986f5ea34f3
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 94
+            // line 95
             echo "\t\t\t\t
 \t\t\t\t";
         }
-        // line 95
+        // line 96
         echo "\t\t\t\t\t\t\t\t\t
 \t\t\t\t</div>\t
 
@@ -224,8 +228,8 @@ class __TwigTemplate_6f2d414db95b4256d127b6583562dbb9c83ca38c28d16f62986f5ea34f3
 
 \t\t<!-- showFriends Modal -->
 \t\t<div class=\"modal\" id=\"showFriends\">
-\t\t\t<div class=\"modal-dialog\">
-\t\t\t\t<div class=\"modal-content\">
+\t\t\t<div class=\"modal-dialog modal-lg\">
+\t\t\t\t<div class=\"modal-content bg-dark text-primary\">
 \t\t\t\t\t<!-- Modal Header -->
 \t\t\t\t\t<div class=\"modal-header\">
 \t\t\t\t\t\t<h4 class=\"modal-title\">FRIENDS</h4>
@@ -234,52 +238,55 @@ class __TwigTemplate_6f2d414db95b4256d127b6583562dbb9c83ca38c28d16f62986f5ea34f3
 \t\t\t\t\t<!-- Modal body -->
 \t\t\t\t\t<div class=\"modal-body\">
 \t\t\t\t\t";
-        // line 112
+        // line 113
         if (twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "friends", array())) {
-            // line 113
-            echo "\t\t\t\t\t\t";
+            // line 114
+            echo "\t\t\t\t\t\t<div class=\"row my-1\">
+\t\t\t\t\t\t";
+            // line 115
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "friends", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["friend"]) {
-                // line 114
-                echo "\t\t\t\t\t\t<div class=\"card bg-dark text-primary mb-1\">
-\t\t\t\t\t\t\t<div class=\"card-header\">
-\t\t\t\t\t\t\t\t<h2 class=\"text-center\">";
                 // line 116
+                echo "\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-12 card bg-dark mb-1 mr-1\">
+\t\t\t\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t\t\t\t<h2 class=\"text-center text-primary\">";
+                // line 118
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["friend"], "firstname", array()), "html", null, true);
                 echo " ";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["friend"], "lastname", array()), "html", null, true);
                 echo "</h2>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t<div class=\"card-body\">
-\t\t\t\t\t\t\t\t<img src=\"";
-                // line 119
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"card-body\">
+\t\t\t\t\t\t\t\t\t<img src=\"";
+                // line 121
                 echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
                 echo "/";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["friend"], "profile_image", array()), "html", null, true);
-                echo "\" class=\"w-100\" style=\"height: 300px;\">
-\t\t\t\t\t\t\t</div>\t
-\t\t\t\t\t\t\t<div class=\"card-body\">
-\t\t\t\t\t\t\t\t<a href=\"";
-                // line 122
+                echo "\" class=\"w-100\" style=\"height: 200px;\">
+\t\t\t\t\t\t\t\t</div>\t
+\t\t\t\t\t\t\t\t<div class=\"card-body\">
+\t\t\t\t\t\t\t\t\t<a href=\"";
+                // line 124
                 echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
                 echo "/users/show/";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["friend"], "friend_id", array()), "html", null, true);
                 echo "\" class=\"btn btn-primary w-100\">VIEW PROFILE</a>
-\t\t\t\t\t\t\t</div>\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</div>\t
+\t\t\t\t\t\t\t</div>\t\t\t\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['friend'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 126
-            echo "\t\t\t\t\t";
+            // line 128
+            echo "\t\t\t\t\t\t</div>
+\t\t\t\t\t";
         } else {
-            // line 127
+            // line 130
             echo "\t\t\t\t\t";
         }
-        // line 128
+        // line 131
         echo "\t\t\t\t\t</div>
 \t\t\t\t\t<!-- Modal footer -->
 \t\t\t\t\t<div class=\"modal-footer\">
@@ -291,8 +298,8 @@ class __TwigTemplate_6f2d414db95b4256d127b6583562dbb9c83ca38c28d16f62986f5ea34f3
 
 \t\t<!-- likedPosts Modal -->
 \t\t<div class=\"modal\" id=\"likedPosts\">
-\t\t\t<div class=\"modal-dialog\">
-\t\t\t\t<div class=\"modal-content\">
+\t\t\t<div class=\"modal-dialog modal-lg\">
+\t\t\t\t<div class=\"modal-content bg-dark text-primary\">
 \t\t\t\t\t<!-- Modal Header -->
 \t\t\t\t\t<div class=\"modal-header\">
 \t\t\t\t\t\t<h4 class=\"modal-title\">LIKED POSTS</h4>
@@ -301,32 +308,34 @@ class __TwigTemplate_6f2d414db95b4256d127b6583562dbb9c83ca38c28d16f62986f5ea34f3
 \t\t\t\t\t<!-- Modal body -->
 \t\t\t\t\t<div class=\"modal-body\">
 \t\t\t\t\t";
-        // line 148
+        // line 151
         if (twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "likedPosts", array())) {
-            // line 149
-            echo "\t\t\t\t\t\t";
+            // line 152
+            echo "\t\t\t\t\t\t<div class=\"row my-1\">
+\t\t\t\t\t\t";
+            // line 153
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "likedPosts", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["likedPost"]) {
-                // line 150
-                echo "\t\t\t\t\t\t<div class=\"card bg-dark text-primary mb-1\">
-\t\t\t\t\t\t\t<div class=\"card-header\">
-\t\t\t\t\t\t\t\t<h2 class=\"text-center\">";
-                // line 152
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["friend"] ?? null), "title", array()), "html", null, true);
-                echo "</h2>
+                // line 154
+                echo "\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-12 card bg-dark mb-1 mr-1\">
+\t\t\t\t\t\t\t<div class=\"card-header text-primary\" style=\"padding: 0px; margin: 0px;\">
+\t\t\t\t\t\t\t\t<h4 class=\"text-center text-primary\">";
+                // line 156
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["likedPost"], "title", array()), "html", null, true);
+                echo "</h4>
 \t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t<div class=\"card-body\">
+\t\t\t\t\t\t\t<div class=\"card-body\" style=\"padding: 0px; margin: 0px;\">
 \t\t\t\t\t\t\t\t<img src=\"";
-                // line 155
+                // line 159
                 echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
                 echo "/";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["likedPost"], "image", array()), "html", null, true);
-                echo "\" class=\"w-100\" style=\"height: 300px;\">
+                echo "\" class=\"w-100\" style=\"height: 150px;\">
 \t\t\t\t\t\t\t</div>\t
-\t\t\t\t\t\t\t<div class=\"card-body\">
+\t\t\t\t\t\t\t<div class=\"card-footer\">
 \t\t\t\t\t\t\t\t<a href=\"";
-                // line 158
+                // line 162
                 echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
                 echo "/posts/show/";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["likedPost"], "slug", array()), "html", null, true);
@@ -338,13 +347,14 @@ class __TwigTemplate_6f2d414db95b4256d127b6583562dbb9c83ca38c28d16f62986f5ea34f3
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['likedPost'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 162
-            echo "\t\t\t\t\t";
+            // line 166
+            echo "\t\t\t\t\t\t</div>
+\t\t\t\t\t";
         } else {
-            // line 163
+            // line 168
             echo "\t\t\t\t\t";
         }
-        // line 164
+        // line 169
         echo "\t\t\t\t\t</div>
 \t\t\t\t\t<!-- Modal footer -->
 \t\t\t\t\t<div class=\"modal-footer\">
@@ -357,7 +367,7 @@ class __TwigTemplate_6f2d414db95b4256d127b6583562dbb9c83ca38c28d16f62986f5ea34f3
 \t\t<!-- createPost Modal -->
 \t\t<div class=\"modal\" id=\"createPost\">
 \t\t\t<div class=\"modal-dialog\">
-\t\t\t\t<div class=\"modal-content\">
+\t\t\t\t<div class=\"modal-content bg-dark text-primary\">
 \t\t\t\t\t<!-- Modal Header -->
 \t\t\t\t\t<div class=\"modal-header\">
 \t\t\t\t\t\t<h4 class=\"modal-title\">CREATE POST</h4>
@@ -380,7 +390,7 @@ class __TwigTemplate_6f2d414db95b4256d127b6583562dbb9c83ca38c28d16f62986f5ea34f3
 \t\t\t\t\t\t\t</div>\t\t\t\t\t
 \t\t\t\t\t\t\t<div class=\"row justify-content-center\">
 \t\t\t\t\t\t\t\t <div class=\"col-md-6\">
-\t\t\t\t\t\t\t\t \t<input type=\"submit\" name=\"submit\" value=\"CREATE\" class=\"btn btn-success w-100\">
+\t\t\t\t\t\t\t\t \t<input type=\"submit\" name=\"submit\" value=\"CREATE\" class=\"btn btn-info w-100\">
 \t\t\t\t\t\t\t\t </div>
 \t\t\t\t\t\t\t\t <div class=\"col-md-6\">
 \t\t\t\t\t\t\t\t \t<button type=\"button\" class=\"btn btn-danger w-100\" data-dismiss=\"modal\">Close</button>
@@ -399,11 +409,11 @@ class __TwigTemplate_6f2d414db95b4256d127b6583562dbb9c83ca38c28d16f62986f5ea34f3
 \t\t</div>
 \t\t
 \t\t<script src=\"";
-        // line 217
+        // line 222
         echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
         echo "/js/post.js\"></script>
 \t\t<script src=\"";
-        // line 218
+        // line 223
         echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
         echo "/js/notifications.js\"></script>
 
@@ -422,7 +432,7 @@ class __TwigTemplate_6f2d414db95b4256d127b6583562dbb9c83ca38c28d16f62986f5ea34f3
 
     public function getDebugInfo()
     {
-        return array (  407 => 218,  403 => 217,  348 => 164,  345 => 163,  342 => 162,  330 => 158,  322 => 155,  316 => 152,  312 => 150,  307 => 149,  305 => 148,  283 => 128,  280 => 127,  277 => 126,  265 => 122,  257 => 119,  249 => 116,  245 => 114,  240 => 113,  238 => 112,  219 => 95,  215 => 94,  198 => 88,  188 => 85,  181 => 81,  177 => 80,  173 => 79,  163 => 74,  157 => 71,  153 => 69,  148 => 68,  143 => 66,  136 => 62,  112 => 41,  108 => 40,  98 => 33,  94 => 32,  90 => 31,  86 => 30,  82 => 29,  78 => 28,  74 => 27,  65 => 23,  57 => 18,  53 => 17,  49 => 16,  35 => 4,  32 => 3,  15 => 1,);
+        return array (  417 => 223,  413 => 222,  358 => 169,  355 => 168,  351 => 166,  339 => 162,  331 => 159,  325 => 156,  321 => 154,  317 => 153,  314 => 152,  312 => 151,  290 => 131,  287 => 130,  283 => 128,  271 => 124,  263 => 121,  255 => 118,  251 => 116,  247 => 115,  244 => 114,  242 => 113,  223 => 96,  219 => 95,  202 => 89,  192 => 86,  185 => 82,  181 => 81,  177 => 80,  167 => 75,  161 => 72,  157 => 70,  152 => 69,  147 => 67,  140 => 63,  116 => 42,  112 => 41,  106 => 38,  98 => 33,  94 => 32,  90 => 31,  86 => 30,  82 => 29,  78 => 28,  74 => 27,  65 => 23,  57 => 18,  53 => 17,  49 => 16,  35 => 4,  32 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

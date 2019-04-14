@@ -35,15 +35,15 @@ class Users extends Controller {
 	}
 
 	/* show user by id */
-	public function show($id)
+	public function show($username)
 	{
-		if(!empty($id) && !empty($this->segment->get('user_session')) && $this->userModel::find($id)){
-			if($id == $this->segment->get('user_session')){
+		if(!empty($username) && !empty($this->segment->get('user_session')) && $this->userModel::where('username', $username)->first()){
+			if($this->userModel::where('username', $username)->first()->id == $this->segment->get('user_session')){
 				$this->mvcFunction->redirect('users/index');
 			}else {
-				$userProfile = $this->userModel::find($id);
-				$posts       = $this->postModel::where('user_id', $id)->get();
-				$isFriend    = $this->friendModel::where('friend_id', $id)->where('user_id', $this->segment->get('user_session'))->first();
+				$userProfile = $this->userModel::where('username', $username)->first();
+				$posts       = $this->postModel::where('user_id', $userProfile->id)->get();
+				$isFriend    = $this->friendModel::where('friend_id', $userProfile->id)->where('user_id', $this->segment->get('user_session'))->first();
 				$data = array(
 					'userProfile' => $userProfile,
 					'posts'       => $posts,
@@ -185,7 +185,7 @@ class Users extends Controller {
 			}
 			/* if errors are empty */
 			if(empty($message)){
-				$username      = $firstname."_".$lastname."_".mt_rand();
+				$username      = $firstname."_".$lastname."_".mt_rand(0, 100);
 				$password_hash = password_hash($password, PASSWORD_BCRYPT);
 				$user = $this->userModel::create(['firstname' => $firstname, 'lastname' => $lastname, 'username' => $username, 'email' => $email, 'password' => $password_hash, 'profile_image' => 'images/profile.jpg', 'gender' => $gender, 'age' => $age]);
 				if($user) {	

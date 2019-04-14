@@ -1,11 +1,9 @@
 /* layout */
 footer {
-	//position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 30px;
-	line-height: 60px;
+	position: sticky;
 	background-color: #f5f5f5;
+    bottom: 0;
+	height: 2rem;
 }
 
 /* error/alert */
@@ -15,25 +13,25 @@ footer {
 }
 
 /* users/register - users/login */
+#register-div {
+	background-color: #003366;
+	min-height: 100%;
+}
+
 #register {
 	margin-top: 25%;
+	margin-bottom: 25%;
+}
+
+#login-div {
+	background-color: #003399;
+	min-height: 100%;	
 }
 
 #register a{
 	font-size: 150px;
 	color: #FFFFFF;
 }
-
-#register_div {
-	min-height: 90vh;
-	background-color: #003366;	
-}
-
-#login_div {
-	min-height: 90vh;
-	background-color: #003399;	
-}
-
 /* users/index */
 .profile-image {
 	width: 100%;
@@ -70,7 +68,7 @@ footer {
 /* posts/show */
 #post-image {
 	width: 100%;
-	height: 400px;
+	height: 350px;
 }
 
 #like-btn {

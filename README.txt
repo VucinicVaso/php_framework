@@ -1,1 +1,1 @@
-This is a simple framework build with php.
+This is a simple framework build with php, mysql, composer.

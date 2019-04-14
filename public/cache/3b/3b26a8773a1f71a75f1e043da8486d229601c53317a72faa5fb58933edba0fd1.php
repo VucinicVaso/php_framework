@@ -130,7 +130,7 @@ class __TwigTemplate_e59fb115967ba2f626004ad7e3b42acd99f9af4439d09af2ee83b99b1d6
         echo "/users/login\" class=\"btn btn-default w-100 text-uppercase\">HAVE AN ACCOUNT. LOG IN!</a></div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
-\t\t\t\t\t\t
+
 \t\t\t\t\t</form>
 \t\t\t\t</div>
 \t\t\t</div>

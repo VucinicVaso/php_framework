@@ -1,18 +1,21 @@
 {% extends "includes/layout.html" %}
 
 	{% block content %}
-		<div class="col-md-6 col-sm-12">
-			<div class="row justify-content-center" id="register_div">
-				<div class="col-md-12  col-sm-12 text-center" id="register">
+
+		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" id="register-div">
+			<div class="row justify-content-center" id="register-div">
+				<div class="col-md-12 col-sm-12 text-center" id="register">
 					<a href="{{ URLROOT }}/users/register">REGISTER</a>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6 col-sm-12">
-			<div class="row justify-content-center" id="login_div">
-				<div class="col-md-12 col-sm-12 text-center" id="register">
+
+		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+			<div class="row justify-content-center" id="login-div">
+				<div class="col-md-12 col-sm-12 text-center py-2" id="register">
 					<a href="{{ URLROOT }}/users/login">LOGIN</a>
 				</div>
 			</div>
-		</div>		
+		</div>
+		
 	{% endblock %}

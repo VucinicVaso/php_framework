@@ -16,8 +16,8 @@ class Posts extends Controller {
 
 	public function index()
 	{
-		$posts = $this->postModel::select('title', 'slug', 'image')->orderBy('id', 'DESC')->whereMonth('created_at', '12')->get();
-		$users = $this->userModel::select('id', 'firstname', 'lastname')->take(10)->orderBy('id', 'DESC')->get();
+		$posts = $this->postModel->getPostsWithUsers();
+		$users = $this->userModel::select('id', 'firstname', 'lastname', 'username')->take(10)->orderBy('id', 'DESC')->get();
 		$data = array(
 			'posts' => $posts,
 			'users' => $users

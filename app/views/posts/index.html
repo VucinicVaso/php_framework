@@ -2,15 +2,19 @@
 
 	{% block content %}
 
-		<div class="col-md-12 col-sm-12 mt-2 mb-2">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2 mb-2">
 			<div class="row">
 					
-				<div class="col-md-8 col-sm-12">
+				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
 					{% if data.posts %}
 						{% for post in data.posts %}
 							<div class="card bg-dark text-primary mb-2">
 								<div class="card-header">
-									<h1 class="text-center">{{ post.title }}</h1>
+									<div class="d-flex justify-content-between">
+										<a href="{{ URLROOT }}/users/show/{{ post.username }}" class="p-2">by {{ post.firstname }} {{ post.lastname }}</a>
+										<p class="p-2">created {{ post.created_at }}</p>
+									</div>
+									<h1 class="text-center"><a href="{{ URLROOT }}/posts/show/{{ post.slug }}">{{ post.title }}</a></h1>
 								</div>
 								<div class="card-body">
 									<img src="{{ URLROOT }}/{{ post.image }}" id="post-photo">
@@ -23,10 +27,10 @@
 					{% else %}
 					{% endif %}
 				</div>
-				<div class="col-md-4 col-sm-12">
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
 					<ul class="list-group bg-dark">
 					{% for user in data.users %}
-						<li class="list-group-item text-center bg-dark"><a href="{{ URLROOT }}/users/show/{{ user.id }}">{{ user.firstname }} {{ user.lastname }}</a></li>
+						<li class="list-group-item text-center bg-dark"><a href="{{ URLROOT }}/users/show/{{ user.username }}">{{ user.firstname }} {{ user.lastname }}</a></li>
 					{% endfor %}
 					</ul> 
 				</div>

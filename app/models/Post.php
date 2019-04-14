@@ -21,5 +21,12 @@
 				->get();
 		}
 
+		public function getPostsWithUsers(){
+			return Post::select('posts.title', 'posts.slug', 'posts.image', 'posts.created_at', 'users.firstname', 'users.lastname', 'users.username')
+			->join('users', 'posts.user_id', 'users.id')
+			->orderBy('posts.id', 'DESC')
+			->get();
+		}
+
 	}
 ?>

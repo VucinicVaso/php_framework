@@ -32,26 +32,29 @@ class __TwigTemplate_60fff99e9700a007b87938c18c11c344e3b266108f1a9ca2337c825ea60
     public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "\t\t<div class=\"col-md-6 col-sm-12\">
-\t\t\t<div class=\"row justify-content-center\" id=\"register_div\">
-\t\t\t\t<div class=\"col-md-12  col-sm-12 text-center\" id=\"register\">
+        echo "
+\t\t<div class=\"col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12\" id=\"register-div\">
+\t\t\t<div class=\"row justify-content-center\" id=\"register-div\">
+\t\t\t\t<div class=\"col-md-12 col-sm-12 text-center\" id=\"register\">
 \t\t\t\t\t<a href=\"";
-        // line 7
+        // line 8
         echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
         echo "/users/register\">REGISTER</a>
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>
-\t\t<div class=\"col-md-6 col-sm-12\">
-\t\t\t<div class=\"row justify-content-center\" id=\"login_div\">
-\t\t\t\t<div class=\"col-md-12 col-sm-12 text-center\" id=\"register\">
+
+\t\t<div class=\"col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12\">
+\t\t\t<div class=\"row justify-content-center\" id=\"login-div\">
+\t\t\t\t<div class=\"col-md-12 col-sm-12 text-center py-2\" id=\"register\">
 \t\t\t\t\t<a href=\"";
-        // line 14
+        // line 16
         echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
         echo "/users/login\">LOGIN</a>
 \t\t\t\t</div>
 \t\t\t</div>
-\t\t</div>\t\t
+\t\t</div>
+\t\t
 \t";
     }
 
@@ -67,7 +70,7 @@ class __TwigTemplate_60fff99e9700a007b87938c18c11c344e3b266108f1a9ca2337c825ea60
 
     public function getDebugInfo()
     {
-        return array (  50 => 14,  40 => 7,  35 => 4,  32 => 3,  15 => 1,);
+        return array (  52 => 16,  41 => 8,  35 => 4,  32 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

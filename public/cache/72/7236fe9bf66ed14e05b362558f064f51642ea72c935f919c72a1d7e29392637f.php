@@ -32,75 +32,69 @@ class __TwigTemplate_aaaaf8337e495cd91b409b70d6e0f64cef27fb0b09d755fe65a99ca1d66
     public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "\t\t<div class=\"col-md-12 col-sm-12 mt-4 mb-4\">
+        echo "\t\t<div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-4 mb-4\">
 
-\t\t\t<div class=\"row\">
+\t\t\t<div class=\"row justify-content-between\">
 
-\t\t\t\t<div class=\"col-md-8 col-sm-12\">
+\t\t\t\t<div class=\"col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12\">
 \t\t\t\t\t<div class=\"card bg-dark text-primary\">
 \t\t\t\t\t\t<div class=\"card-header\">
-\t\t\t\t\t\t\t<h1 class=\"text-center\">";
-        // line 11
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "post", array()), "title", array()), "html", null, true);
-        echo "</h1>
-\t\t\t\t\t\t\t<small>CREATED: <span class=\"badge badge-secondary\">";
-        // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "post", array()), "created_at", array()), "html", null, true);
-        echo "</span></small>
-\t\t\t\t\t\t\t<small>BY: <span class=\"badge badge-secondary\"><a href=\"";
+\t\t\t\t\t\t\t<div class=\"d-flex justify-content-between\">
+\t\t\t\t\t\t\t\t<p class=\"p-2\">
+\t\t\t\t\t\t\t\t\tCREATED: <span class=\"badge badge-secondary\">";
         // line 13
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "post", array()), "created_at", array()), "html", null, true);
+        echo "</span>
+\t\t\t\t\t\t\t\t\tBY: <span class=\"badge badge-secondary\"><a href=\"";
+        // line 14
         echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
         echo "/users/show/";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "post", array()), "user_id", array()), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "post", array()), "username", array()), "html", null, true);
         echo "\">";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "post", array()), "username", array()), "html", null, true);
-        echo "</a></span></small>
+        echo "</a></span>
+\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t<script src=\"";
+        // line 16
+        echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
+        echo "/js/like.js\"></script>\t
+\t\t\t\t\t\t\t";
+        // line 17
+        if (twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "isLiked", array())) {
+            // line 18
+            echo "\t\t\t\t\t\t\t\t<button class=\"p-2 btn btn-link\" id=\"dislike\" onclick=\"dislikePost( ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "post", array()), "id", array()), "html", null, true);
+            echo " )\"><img src=\"";
+            echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
+            echo "/images/dislike.png\" id=\"like-btn\"></button>\t\t\t\t
+\t\t\t\t\t\t\t";
+        } else {
+            // line 20
+            echo "\t\t\t\t\t\t\t\t<button class=\"p-2 btn btn-link\" id=\"like\" onclick=\"likePost( ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "post", array()), "id", array()), "html", null, true);
+            echo " )\"><img src=\"";
+            echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
+            echo "/images/like.png\" id=\"like-btn\"></button>\t\t\t\t\t\t
+\t\t\t\t\t\t\t";
+        }
+        // line 22
+        echo " \t\t\t\t\t\t\t</div>
+ \t\t\t\t\t\t\t<h1 class=\"text-center\">";
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "post", array()), "title", array()), "html", null, true);
+        echo "</h1>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"card-body\">
 \t\t\t\t\t\t\t<img src=\"";
-        // line 16
+        // line 26
         echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
         echo "/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "post", array()), "image", array()), "html", null, true);
         echo "\" id=\"post-image\">
 \t\t\t\t\t\t\t<p>";
-        // line 17
+        // line 27
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "post", array()), "body", array()), "html", null, true);
         echo "</p>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"card-footer\">
-\t\t\t\t\t\t\t<script src=\"";
-        // line 20
-        echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
-        echo "/js/like.js\"></script>
-\t\t\t\t\t\t\t<div class=\"row justify-content-center\">
-\t\t\t\t\t\t\t";
-        // line 22
-        if (twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "isLiked", array())) {
-            // line 23
-            echo "\t\t\t\t\t\t\t\t<div class=\"col-md-2\">
-\t\t\t\t\t\t\t\t\t<button class=\"btn btn-link\" id=\"dislike\" onclick=\"dislikePost(";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "post", array()), "id", array()), "html", null, true);
-            echo ")\"><img src=\"";
-            echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
-            echo "/images/dislike.png\" id=\"like-btn\"></button>
-\t\t\t\t\t\t\t\t</div>\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t";
-        } else {
-            // line 27
-            echo "\t\t\t\t\t\t\t\t<div class=\"col-md-2\">
-\t\t\t\t\t\t\t\t\t<button class=\"btn btn-link\" id=\"like\" onclick=\"likePost(";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "post", array()), "id", array()), "html", null, true);
-            echo ")\"><img src=\"";
-            echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
-            echo "/images/like.png\" id=\"like-btn\"></button>
-\t\t\t\t\t\t\t\t</div>\t\t\t\t\t\t
-\t\t\t\t\t\t\t";
-        }
-        // line 31
-        echo "\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 
@@ -108,13 +102,13 @@ class __TwigTemplate_aaaaf8337e495cd91b409b70d6e0f64cef27fb0b09d755fe65a99ca1d66
 
 \t\t\t\t\t<!-- POST COMMENT -->
 \t\t\t\t\t<script src=\"";
-        // line 38
+        // line 34
         echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
         echo "/js/comment.js\"></script>
 \t\t\t\t\t<div id=\"commentMSG\">msg</div>
 \t\t\t\t\t<form id=\"commentForm\">
 \t\t\t\t\t\t<input type=\"hidden\" name=\"post_id\" id=\"post_id\" value=\"";
-        // line 41
+        // line 37
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "post", array()), "id", array()), "html", null, true);
         echo "\">
 \t\t\t\t\t\t<div class=\"form-group\">
@@ -127,19 +121,19 @@ class __TwigTemplate_aaaaf8337e495cd91b409b70d6e0f64cef27fb0b09d755fe65a99ca1d66
 \t\t\t\t</div>
 
 \t\t\t\t<!-- COMMENTS -->
-\t\t\t\t<div class=\"col-md-4 col-sm-12\">
+\t\t\t\t<div class=\"col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12\">
 \t\t\t\t";
-        // line 53
+        // line 49
         if ( !twig_test_empty(twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "comments", array()))) {
-            // line 54
+            // line 50
             echo "\t\t\t\t\t";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "comments", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
-                // line 55
+                // line 51
                 echo "\t\t\t\t\t<div class=\"media border p-3\">
 \t\t\t\t\t\t<img src=\"";
-                // line 56
+                // line 52
                 echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
                 echo "\\";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "profile_image", array()), "html", null, true);
@@ -148,7 +142,7 @@ class __TwigTemplate_aaaaf8337e495cd91b409b70d6e0f64cef27fb0b09d755fe65a99ca1d66
                 echo "\" class=\"mr-3 mt-3 rounded-circle\" style=\"width:60px;\">
 \t\t\t\t\t\t<div class=\"media-body\">
 \t\t\t\t\t\t\t<h4><a href=\"";
-                // line 58
+                // line 54
                 echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
                 echo "/users/show/";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "id", array()), "html", null, true);
@@ -159,7 +153,7 @@ class __TwigTemplate_aaaaf8337e495cd91b409b70d6e0f64cef27fb0b09d755fe65a99ca1d66
                 echo "</i></small></h4>
 \t\t\t\t\t\t\t<hr>
 \t\t\t\t\t\t\t<p>";
-                // line 60
+                // line 56
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "comment", array()), "html", null, true);
                 echo "</p>
 \t\t\t\t\t\t</div>
@@ -169,14 +163,14 @@ class __TwigTemplate_aaaaf8337e495cd91b409b70d6e0f64cef27fb0b09d755fe65a99ca1d66
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 64
+            // line 60
             echo "\t\t\t\t";
         } else {
-            // line 65
+            // line 61
             echo "\t\t\t\t\t<div class=\"alert alert-warning text-center\">no comments!</div>
 \t\t\t\t";
         }
-        // line 67
+        // line 63
         echo "\t\t\t\t</div>
 \t\t\t\t\t
 \t\t\t</div>
@@ -197,7 +191,7 @@ class __TwigTemplate_aaaaf8337e495cd91b409b70d6e0f64cef27fb0b09d755fe65a99ca1d66
 
     public function getDebugInfo()
     {
-        return array (  180 => 67,  176 => 65,  173 => 64,  163 => 60,  152 => 58,  143 => 56,  140 => 55,  135 => 54,  133 => 53,  118 => 41,  112 => 38,  103 => 31,  95 => 28,  92 => 27,  84 => 24,  81 => 23,  79 => 22,  74 => 20,  68 => 17,  62 => 16,  52 => 13,  48 => 12,  44 => 11,  35 => 4,  32 => 3,  15 => 1,);
+        return array (  174 => 63,  170 => 61,  167 => 60,  157 => 56,  146 => 54,  137 => 52,  134 => 51,  129 => 50,  127 => 49,  112 => 37,  106 => 34,  96 => 27,  90 => 26,  84 => 23,  81 => 22,  73 => 20,  65 => 18,  63 => 17,  59 => 16,  50 => 14,  46 => 13,  35 => 4,  32 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

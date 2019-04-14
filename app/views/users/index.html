@@ -32,9 +32,10 @@
 							<p>AGE: <span class="badge badge-primary float-right">{{ data.user.age }}</span></p>		
 							<p>PROFILE CREATED: <span class="badge badge-primary float-right">{{ data.user.created_at }}</span></p>
 							<hr>
-							<p class="btn btn-outline-primary w-100" data-toggle="modal" data-target="#showFriends">FRIENDS</p>
-							<p class="btn btn-outline-primary w-100" data-toggle="modal" data-target="#likedPosts"><i class="far fa-heart"></i> POSTS</p>
-							<p class="btn btn-primary w-100" data-toggle="modal" data-target="#createPost"><i class="far fa-plus-square"></i> POST</p>
+							<p class="btn btn-outline-primary w-100 text-white" data-toggle="modal" data-target="#likedPosts"><i class="far fa-heart"></i> POSTS</p>
+							<p class="btn btn-outline-primary w-100 text-white" data-toggle="modal" data-target="#showFriends">FRIENDS</p>
+							<p class="btn btn-outline-primary w-100 text-white" data-toggle="modal" data-target="#createPost"><i class="far fa-plus-square"></i> POST</p>
+							<a href="{{ URLROOT }}/gallery/index" class="btn btn-outline-primary w-100 text-uppercase text-white">GALLERY</a>
 						</div>
 						<div class="card-footer">
 							<form action="{{ URLROOT }}/users/delete" method="POST">
@@ -100,8 +101,8 @@
 
 		<!-- showFriends Modal -->
 		<div class="modal" id="showFriends">
-			<div class="modal-dialog">
-				<div class="modal-content">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content bg-dark text-primary">
 					<!-- Modal Header -->
 					<div class="modal-header">
 						<h4 class="modal-title">FRIENDS</h4>
@@ -110,19 +111,21 @@
 					<!-- Modal body -->
 					<div class="modal-body">
 					{% if data.friends %}
+						<div class="row my-1">
 						{% for friend in data.friends %}
-						<div class="card bg-dark text-primary mb-1">
-							<div class="card-header">
-								<h2 class="text-center">{{ friend.firstname }} {{ friend.lastname }}</h2>
-							</div>
-							<div class="card-body">
-								<img src="{{ URLROOT }}/{{ friend.profile_image }}" class="w-100" style="height: 300px;">
-							</div>	
-							<div class="card-body">
-								<a href="{{ URLROOT }}/users/show/{{ friend.friend_id }}" class="btn btn-primary w-100">VIEW PROFILE</a>
-							</div>															
-						</div>
+							<div class="col-lg-4 col-md-4 col-sm-12 col-12 card bg-dark mb-1 mr-1">
+								<div class="card-header">
+									<h2 class="text-center text-primary">{{ friend.firstname }} {{ friend.lastname }}</h2>
+								</div>
+								<div class="card-body">
+									<img src="{{ URLROOT }}/{{ friend.profile_image }}" class="w-100" style="height: 200px;">
+								</div>	
+								<div class="card-body">
+									<a href="{{ URLROOT }}/users/show/{{ friend.friend_id }}" class="btn btn-primary w-100">VIEW PROFILE</a>
+								</div>	
+							</div>														
 						{% endfor %}
+						</div>
 					{% else %}
 					{% endif %}
 					</div>
@@ -136,8 +139,8 @@
 
 		<!-- likedPosts Modal -->
 		<div class="modal" id="likedPosts">
-			<div class="modal-dialog">
-				<div class="modal-content">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content bg-dark text-primary">
 					<!-- Modal Header -->
 					<div class="modal-header">
 						<h4 class="modal-title">LIKED POSTS</h4>
@@ -146,19 +149,21 @@
 					<!-- Modal body -->
 					<div class="modal-body">
 					{% if data.likedPosts %}
+						<div class="row my-1">
 						{% for likedPost in data.likedPosts %}
-						<div class="card bg-dark text-primary mb-1">
-							<div class="card-header">
-								<h2 class="text-center">{{ friend.title }}</h2>
+						<div class="col-lg-4 col-md-4 col-sm-12 col-12 card bg-dark mb-1 mr-1">
+							<div class="card-header text-primary" style="padding: 0px; margin: 0px;">
+								<h4 class="text-center text-primary">{{ likedPost.title }}</h4>
 							</div>
-							<div class="card-body">
-								<img src="{{ URLROOT }}/{{ likedPost.image }}" class="w-100" style="height: 300px;">
+							<div class="card-body" style="padding: 0px; margin: 0px;">
+								<img src="{{ URLROOT }}/{{ likedPost.image }}" class="w-100" style="height: 150px;">
 							</div>	
-							<div class="card-body">
+							<div class="card-footer">
 								<a href="{{ URLROOT }}/posts/show/{{ likedPost.slug }}" class="btn btn-primary w-100">VIEW POST</a>
 							</div>															
 						</div>
 						{% endfor %}
+						</div>
 					{% else %}
 					{% endif %}
 					</div>
@@ -173,7 +178,7 @@
 		<!-- createPost Modal -->
 		<div class="modal" id="createPost">
 			<div class="modal-dialog">
-				<div class="modal-content">
+				<div class="modal-content bg-dark text-primary">
 					<!-- Modal Header -->
 					<div class="modal-header">
 						<h4 class="modal-title">CREATE POST</h4>
@@ -196,7 +201,7 @@
 							</div>					
 							<div class="row justify-content-center">
 								 <div class="col-md-6">
-								 	<input type="submit" name="submit" value="CREATE" class="btn btn-success w-100">
+								 	<input type="submit" name="submit" value="CREATE" class="btn btn-info w-100">
 								 </div>
 								 <div class="col-md-6">
 								 	<button type="button" class="btn btn-danger w-100" data-dismiss="modal">Close</button>

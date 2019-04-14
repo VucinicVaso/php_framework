@@ -1,34 +1,30 @@
 {% extends "includes/layout.html" %}
 
 	{% block content %}
-		<div class="col-md-12 col-sm-12 mt-4 mb-4">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-4 mb-4">
 
-			<div class="row">
+			<div class="row justify-content-between">
 
-				<div class="col-md-8 col-sm-12">
+				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
 					<div class="card bg-dark text-primary">
 						<div class="card-header">
-							<h1 class="text-center">{{ data.post.title }}</h1>
-							<small>CREATED: <span class="badge badge-secondary">{{ data.post.created_at }}</span></small>
-							<small>BY: <span class="badge badge-secondary"><a href="{{URLROOT}}/users/show/{{ data.post.user_id }}">{{ data.post.username }}</a></span></small>
+							<div class="d-flex justify-content-between">
+								<p class="p-2">
+									CREATED: <span class="badge badge-secondary">{{ data.post.created_at }}</span>
+									BY: <span class="badge badge-secondary"><a href="{{URLROOT}}/users/show/{{ data.post.username }}">{{ data.post.username }}</a></span>
+								</p>
+							<script src="{{ URLROOT }}/js/like.js"></script>	
+							{% if data.isLiked %}
+								<button class="p-2 btn btn-link" id="dislike" onclick="dislikePost( {{data.post.id}} )"><img src="{{ URLROOT }}/images/dislike.png" id="like-btn"></button>				
+							{% else %}
+								<button class="p-2 btn btn-link" id="like" onclick="likePost( {{data.post.id}} )"><img src="{{ URLROOT }}/images/like.png" id="like-btn"></button>						
+							{% endif %}
+ 							</div>
+ 							<h1 class="text-center">{{ data.post.title }}</h1>
 						</div>
 						<div class="card-body">
 							<img src="{{ URLROOT }}/{{ data.post.image }}" id="post-image">
 							<p>{{ data.post.body }}</p>
-						</div>
-						<div class="card-footer">
-							<script src="{{ URLROOT }}/js/like.js"></script>
-							<div class="row justify-content-center">
-							{% if data.isLiked %}
-								<div class="col-md-2">
-									<button class="btn btn-link" id="dislike" onclick="dislikePost({{data.post.id}})"><img src="{{ URLROOT }}/images/dislike.png" id="like-btn"></button>
-								</div>							
-							{% else %}
-								<div class="col-md-2">
-									<button class="btn btn-link" id="like" onclick="likePost({{data.post.id}})"><img src="{{ URLROOT }}/images/like.png" id="like-btn"></button>
-								</div>						
-							{% endif %}
-							</div>
 						</div>
 					</div>
 
@@ -49,7 +45,7 @@
 				</div>
 
 				<!-- COMMENTS -->
-				<div class="col-md-4 col-sm-12">
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
 				{% if data.comments is not empty %}
 					{% for comment in data.comments %}
 					<div class="media border p-3">
