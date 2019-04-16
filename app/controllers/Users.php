@@ -37,7 +37,7 @@ class Users extends Controller {
 	/* show user by id */
 	public function show($username)
 	{
-		if(!empty($username) && !empty($this->segment->get('user_session')) && $this->userModel::where('username', $username)->first()){
+		if(!empty($username) && $this->userModel::where('username', $username)->first()){
 			if($this->userModel::where('username', $username)->first()->id == $this->segment->get('user_session')){
 				$this->mvcFunction->redirect('users/index');
 			}else {
