@@ -74,34 +74,57 @@ class __TwigTemplate_9cfb4945cf570a55871a383889927217aba113bed7fddacd6a198bd648b
 \t  \t<div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\"> \t\t
 \t\t    <ul class=\"navbar-nav ml-auto text-uppercase\">
 \t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t\t<a class=\"nav-link\" href=\"";
+\t\t\t\t\t<a class=\"nav-link\" href=\"";
             // line 35
             echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
-            echo "/users/index\">Profile</a>
-\t\t\t\t</li>\t
+            echo "/users/index\">PROFILE</a>
+\t\t\t\t</li>
+\t\t\t\t<li class=\"nav-item dropdown\">
+\t\t\t\t\t<a class=\"nav-link dropdown-toggle\" href=\"#\" data-toggle=\"dropdown\" id=\"notification\" onclick=\"seeNotifications()\">
+\t\t\t\t\tNOTIFICATIONS
+\t\t\t\t\t</a>
+\t\t\t\t\t<div class=\"dropdown-menu\">
+\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"";
+            // line 42
+            echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
+            echo "/notifications/likes\" id=\"likeNotification\"></a>
+\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"";
+            // line 43
+            echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
+            echo "/notifications/comments\" id=\"commentNotification\"></a>
+\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"";
+            // line 44
+            echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
+            echo "/notifications/friends\" id=\"friendNotification\"></a>
+\t\t\t\t\t</div>
+\t\t\t\t</li>\t\t\t\t\t
 \t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t<a  class=\"nav-link\" href=\"";
-            // line 38
+            // line 48
             echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
             echo "/users/edit\">SETTINGS</a>
 \t\t\t\t</li>\t\t
 \t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t<a class=\"nav-link\" href=\"";
-            // line 41
+            // line 51
             echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
             echo "/users/logout\">Logout</a>
 \t\t\t\t</li>
 \t\t    </ul>
+\t\t\t<script src=\"";
+            // line 54
+            echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
+            echo "/js/notifications.js\"></script>
 \t  \t</div>
 \t";
         }
-        // line 46
+        // line 57
         echo "\t</nav>
 
 \t<div class=\"container-fluid\">
 \t\t<div class=\"row justify-content-center\">
 \t\t\t";
-        // line 50
+        // line 61
         $this->displayBlock('content', $context, $blocks);
         echo " 
 \t\t</div>
@@ -129,7 +152,7 @@ class __TwigTemplate_9cfb4945cf570a55871a383889927217aba113bed7fddacd6a198bd648b
 
     public function getDebugInfo()
     {
-        return array (  105 => 50,  99 => 46,  91 => 41,  85 => 38,  79 => 35,  68 => 27,  65 => 26,  57 => 25,  55 => 24,  40 => 12,  35 => 10,  24 => 1,);
+        return array (  128 => 61,  122 => 57,  116 => 54,  110 => 51,  104 => 48,  97 => 44,  93 => 43,  89 => 42,  79 => 35,  68 => 27,  65 => 26,  57 => 25,  55 => 24,  40 => 12,  35 => 10,  24 => 1,);
     }
 
     public function getSourceContext()

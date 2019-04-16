@@ -12,12 +12,11 @@ window.onload = function(){
 		.then(data => {
 			const {notifications } = data;
 			if(notifications > 0){
-				notificationDIV.classList.remove("bg-primary");
 				notificationDIV.classList.add("bg-warning");
+				notificationDIV.classList.add("text-white");
 				console.log("You have new notifications!");
 			}else {
 				notificationDIV.classList.remove("bg-warning");
-				notificationDIV.classList.add("bg-primary");
 				console.log("you have 0 new notifications.");
 			}
 		});

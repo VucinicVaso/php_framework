@@ -32,8 +32,18 @@
 	  	<div class="collapse navbar-collapse" id="navbarSupportedContent"> 		
 		    <ul class="navbar-nav ml-auto text-uppercase">
 				<li class="nav-item">
-						<a class="nav-link" href="{{ URLROOT }}/users/index">Profile</a>
-				</li>	
+					<a class="nav-link" href="{{ URLROOT }}/users/index">PROFILE</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="notification" onclick="seeNotifications()">
+					NOTIFICATIONS
+					</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="{{ URLROOT }}/notifications/likes" id="likeNotification"></a>
+						<a class="dropdown-item" href="{{ URLROOT }}/notifications/comments" id="commentNotification"></a>
+						<a class="dropdown-item" href="{{ URLROOT }}/notifications/friends" id="friendNotification"></a>
+					</div>
+				</li>					
 				<li class="nav-item">
 					<a  class="nav-link" href="{{ URLROOT }}/users/edit">SETTINGS</a>
 				</li>		
@@ -41,6 +51,7 @@
 					<a class="nav-link" href="{{ URLROOT }}/users/logout">Logout</a>
 				</li>
 		    </ul>
+			<script src="{{ URLROOT }}/js/notifications.js"></script>
 	  	</div>
 	{% endif %}
 	</nav>

@@ -8,20 +8,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-12 col-12">				
 					<div class="card bg-dark text-primary">
 						<div class="card-header bg-dark">
-
-							<div class="row justify-content-center my-1">
-							    <div class="col-lg-6 col-md-6 col-sm-12 col-12 bg-primary text-center text-white dropdown-toggle" id="notification" onclick="seeNotifications()" data-toggle="dropdown">NOTIFICATIONS
-				
-							    	<div class="dropdown-menu">
-							    		<a class="dropdown-item" href="{{ URLROOT }}/notifications/likes" id="likeNotification"></a>
-							    		<a class="dropdown-item" href="{{ URLROOT }}/notifications/comments" id="commentNotification"></a>
-							    		<a class="dropdown-item" href="{{ URLROOT }}/notifications/friends" id="friendNotification"></a>
-							    	</div>							    
-							    </div>
-							</div>
-
 							<img src="{{ URLROOT }}/{{ data.user.profile_image }}" class="profile-image">
-
 						</div>						
 						<div class="card-body bg-dark"> 
 							<p>FIRSTNAME: <span class="badge badge-primary float-right">{{ data.user.firstname }}</span></p>
@@ -29,7 +16,7 @@
 							<p>USERNAME: <span class="badge badge-primary float-right">{{ data.user.username }}</span></p>	
 							<p>EMAIL: <span class="badge badge-primary float-right">{{ data.user.email }}</span></p>	
 							<p>GENDER: <span class="badge badge-primary float-right">{{ data.user.gender }}</span></p>
-							<p>AGE: <span class="badge badge-primary float-right">{{ data.user.age }}</span></p>		
+							<p>AGE: <span class="badge badge-primary float-right">{{ data.user.age }}</span></p>
 							<p>PROFILE CREATED: <span class="badge badge-primary float-right">{{ data.user.created_at }}</span></p>
 							<hr>
 							<p class="btn btn-outline-primary w-100 text-white" data-toggle="modal" data-target="#likedPosts"><i class="far fa-heart"></i> POSTS</p>
@@ -220,6 +207,5 @@
 		</div>
 		
 		<script src="{{ URLROOT }}/js/post.js"></script>
-		<script src="{{ URLROOT }}/js/notifications.js"></script>
 
 	{% endblock %}
