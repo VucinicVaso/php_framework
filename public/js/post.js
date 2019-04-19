@@ -23,7 +23,7 @@ async function createPost(e) {
 	formData.append('body', this.body.value);
 	formData.append('image', this.image.files[0]);
 	
-	const sendForm = await fetch('http://localhost/php_mvc_2/posts/create', {
+	const sendForm = await fetch('http://localhost/php_mvc/posts/create', {
 		method: 'post',
 		body: formData
 	}).then(response => response.json())

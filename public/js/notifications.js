@@ -6,7 +6,7 @@ window.onload = function(){
 	const friendNotification  = document.querySelector("#likeNotification");
 
 	notification = function() {
-		fetch('http://localhost/php_mvc_2/notifications/index', {
+		fetch('http://localhost/php_mvc/notifications/index', {
 			method: 'get'
 		}).then(response => response.json())
 		.then(data => {
@@ -31,7 +31,7 @@ function seeNotifications(){
 	commentNotification.innerHTML = "";
 	friendNotification.innerHTML  = "";
 
-	fetch('http://localhost/php_mvc_2/notifications/show', {
+	fetch('http://localhost/php_mvc/notifications/show', {
 		method: 'get'
 	}).then(response => response.json())
 	.then(data => {

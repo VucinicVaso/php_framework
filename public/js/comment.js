@@ -23,7 +23,7 @@ window.onload = function(){
 		formData.append('post_id', this.post_id.value);
 		formData.append('comment', this.comment.value);
 		
-		const sendForm = await fetch('http://localhost/php_mvc_2/comments/create', {
+		const sendForm = await fetch('http://localhost/php_mvc/comments/create', {
 			method: 'post',
 			body: formData
 		}).then(response => response.json())

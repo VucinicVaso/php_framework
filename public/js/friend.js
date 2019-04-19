@@ -16,7 +16,7 @@ window.onload = function(){
 			let addFriendData = new FormData();
 			addFriendData.append("friend_id", id);
 
-			const send = await fetch("http://localhost/php_mvc_2/friends/create", {
+			const send = await fetch("http://localhost/php_mvc/friends/create", {
 				method: 'post',
 				body: addFriendData
 			}).then(response => response.json)
@@ -47,7 +47,7 @@ window.onload = function(){
 			let addFriendData = new FormData();
 			addFriendData.append("friend_id", id);
 
-			const send = await fetch("http://localhost/php_mvc_2/friends/delete", {
+			const send = await fetch("http://localhost/php_mvc/friends/delete", {
 				method: 'post',
 				body: addFriendData
 			}).then(response => response.json)

@@ -11,7 +11,7 @@ $(function(){
 			let search = $("#searchInput").val();
 			timer = null;
 			
-			const sendForm = fetch('http://localhost/php_mvc_2/friends/index/' + search, {
+			const sendForm = fetch('http://localhost/php_mvc/friends/index/' + search, {
 				method: 'get'
 			}).then(response => response.json())
 			.then(data => {
@@ -22,10 +22,10 @@ $(function(){
 						result = `
 							<div class="row">
 								<div class="col-md-4">
-									<img src="http://localhost/php_mvc_2/public/${user.profile_image}" class="w-100" style="height:100px;">
+									<img src="http://localhost/php_mvc/public/${user.profile_image}" class="w-100" style="height:100px;">
 								</div>
 								<div class="col-md-8">
-									<a href="http://localhost/php_mvc_2/users/show/${user.id}" id="user" class="text-center">
+									<a href="http://localhost/php_mvc/users/show/${user.id}" id="user" class="text-center">
 									${user.firstname} ${user.lastname}
 									</a>
 								</div>

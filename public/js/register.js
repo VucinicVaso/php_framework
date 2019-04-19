@@ -35,7 +35,7 @@ window.onload = function(){
 		formData.append("confirm_password", this.confirm_password.value);
 		formData.append("__csrf_value", this.csrf_value.value);
 		
-		const sendForm = await fetch('http://localhost/php_mvc_2/users/register', {
+		const sendForm = await fetch('http://localhost/php_mvc/users/register', {
 			method: 'post',
 			body: formData
 		}).then(response => response.json())

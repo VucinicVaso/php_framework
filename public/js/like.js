@@ -3,7 +3,7 @@ function likePost(id){
 	const formData = new FormData();
 	formData.append('post_id', post_id);
 
-	fetch('http://localhost/php_mvc_2/likes/create', {
+	fetch('http://localhost/php_mvc/likes/create', {
 		method: 'post',
 		body: formData
 	}).then(response => response.json())
@@ -22,7 +22,7 @@ function dislikePost(id){
 	const formData = new FormData();
 	formData.append('post_id', post_id);
 
-	fetch('http://localhost/php_mvc_2/likes/delete', {
+	fetch('http://localhost/php_mvc/likes/delete', {
 		method: 'post',
 		body: formData
 	}).then(response => response.json())
