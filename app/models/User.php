@@ -49,7 +49,7 @@ class User extends Model {
 	/* list of users friends */
 	public function friends($user_id)
 	{
-		return User::select('users.id', 'users.firstname', 'users.lastname', 'users.profile_image', 'friends.friend_id', 'friends.user_id')
+		return User::select('users.id', 'users.firstname', 'users.lastname', 'users.username', 'users.profile_image', 'friends.friend_id', 'friends.user_id')
 		    ->join('friends', 'users.id', '=', 'friends.friend_id')
 		    ->where('friends.user_id', $user_id)
 		    ->get();

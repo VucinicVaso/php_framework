@@ -20,7 +20,7 @@
 			return Notification::select('notifications.created_at', 'users.id', 'users.firstname', 'users.lastname', 'posts.title', 'posts.slug', 'posts.image', 'comments.comment')
 				->join('users', 'users.id', '=', 'notifications.notificationFrom')
 				->join('posts', 'posts.id', '=', 'notifications.target')
-				->join('comments', 'comments.post_id', '=', 'notifications.target')
+				->join('comments', 'notifications.target', '=', 'comments.post_id')
 				->where('notifications.notificationFor', $user)
 				->where('notifications.type', 'comments')
 				->where('notifications.status', 0)
