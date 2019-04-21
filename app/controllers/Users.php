@@ -109,7 +109,7 @@ class Users extends Controller {
 				/* update profile */
 				$userUpdate = $this->userModel::where('id', $user->id)->update(['firstname' => $firstname, 'lastname' => $lastname, 'username' => $edit_username, 'email' => $email, 'password' => $edit_password, 'profile_image' => $edit_profile_image, 'gender' => $gender, 'age' => $age]);
 				$data = array(
-					'user'         => $user,
+					'user'         => $this->userModel::find($this->segment->get('user_session')),
 					'getCsrfToken' => $this->session->getCsrfToken()->getValue(),
 					'success'      => 'Profile updated succesfully',
 					'error'        =>  ''
