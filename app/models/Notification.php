@@ -25,8 +25,7 @@
 				->where('notifications.notificationFor', '=', $user)
 				->where('notifications.type', '=', 'comments')
 				->where('notifications.status', '=', 0)
-				->get()
-				->toArray();
+				->get();
 		}
 
 		public function getFriends($user){

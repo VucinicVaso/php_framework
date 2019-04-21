@@ -59,7 +59,7 @@ class Notifications extends Controller {
 			'notifications' => $notifications
 		);
 		echo $this->twig->render('notifications/comments.html', array('data' => $data));	
-		//$this->notificationModel::where('notificationFor', $this->segment->get('user_session'))->where('type', 'comments')->where('status', 0)->update(['status' => 1]);
+		$this->notificationModel::where('notificationFor', $this->segment->get('user_session'))->where('type', 'comments')->where('status', 0)->update(['status' => 1]);
 	}
 
 	public function friends()
