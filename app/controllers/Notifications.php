@@ -55,7 +55,6 @@ class Notifications extends Controller {
 	public function comments()
 	{
 		$notifications = $this->notificationModel->getComments($this->segment->get('user_session'));
-		
 		$data = array(
 			'notifications' => $notifications
 		);

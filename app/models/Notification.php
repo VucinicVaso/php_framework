@@ -20,12 +20,13 @@
 			return Notification::select('notifications.created_at', 'users.firstname', 'users.lastname', 'users.username', 'posts.title', 'posts.slug', 'posts.image', 'comments.comment')
 				->join('users', 'notifications.notificationFrom', '=', 'users.id')
 				->join('posts', 'notifications.target', '=', 'posts.id')
-				->join('comments', 'notifications.target', '=', 'comments.post_id')
+				->join('comments', 'users.id', '=', 'comments.user_id')
 				->groupBy('notifications.id', 'notifications.notificationFrom')
 				->where('notifications.notificationFor', '=', $user)
 				->where('notifications.type', '=', 'comments')
 				->where('notifications.status', '=', 0)
-				->get();
+				->get()
+				->toArray();
 		}
 
 		public function getFriends($user){
