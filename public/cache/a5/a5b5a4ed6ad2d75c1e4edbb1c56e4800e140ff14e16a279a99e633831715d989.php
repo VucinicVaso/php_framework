@@ -138,6 +138,7 @@ class __TwigTemplate_6947cc08ca5161ed9b6801eaf6bca009e558dc6d3872e0a98a3567b1e14
 
     public function block_content($context, array $blocks = array())
     {
+        echo " ";
     }
 
     public function getTemplateName()

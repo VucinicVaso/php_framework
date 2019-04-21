@@ -32,17 +32,17 @@ class __TwigTemplate_ef28fc14c9f060cda5e745c21072dcee53d535c1d7118f1b6830be94100
     public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "\t\t<div class=\"col-lg-12 col-md-12 col-sm-12 col-12\">
+        echo "\t\t<div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">
 
 \t\t\t<div class=\"row justify-content-center mt-5 mb-5\">
-\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-12\">
+\t\t\t\t<div class=\"col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12\">
 \t\t\t\t\t<form action=\"";
         // line 8
         echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
         echo "/users/login\" method=\"post\" class=\"card\">
+\t\t\t\t\t\t
 \t\t\t\t\t\t<div class=\"card-header bg-dark text-primary\">
-\t\t\t\t\t\t\t<h1 class=\"text-center text-uppercase\">Login</h1>
-\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t<h1 class=\"text-center text-uppercase\">Login</h1>\t
 \t\t\t\t\t\t\t<div id=\"loginMessage\">
 \t\t\t\t\t\t\t\t";
         // line 13
@@ -71,8 +71,8 @@ class __TwigTemplate_ef28fc14c9f060cda5e745c21072dcee53d535c1d7118f1b6830be94100
         }
         // line 21
         echo "\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t
 \t\t\t\t\t\t</div>
+
 \t\t\t\t\t\t<div class=\"card-body\">\t
 \t\t\t\t\t\t\t<input type=\"hidden\" name=\"__csrf_value\" value=\"";
         // line 25
@@ -87,21 +87,21 @@ class __TwigTemplate_ef28fc14c9f060cda5e745c21072dcee53d535c1d7118f1b6830be94100
 \t\t\t\t\t\t\t\t<input type=\"password\" name=\"login_password\" id=\"login_password\" class=\"form-control\" required>
 \t\t\t\t\t\t\t</div>\t
 \t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12\">
 \t\t\t\t\t\t\t\t\t<input type=\"submit\" name=\"submit\" class=\"btn btn-primary w-100\" id=\"register_btn\" value=\"LOGIN\">
 \t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-12\"><a href=\"";
+\t\t\t\t\t\t\t\t<div class=\"col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12\"><a href=\"";
         // line 38
         echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
         echo "/users/register\" class=\"btn btn-default w-100\">NEW? REGISTER HERE</a></div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
+
 \t\t\t\t\t</form>
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t\t
-\t\t</div>\t
-
+\t\t</div>
 \t";
     }
 

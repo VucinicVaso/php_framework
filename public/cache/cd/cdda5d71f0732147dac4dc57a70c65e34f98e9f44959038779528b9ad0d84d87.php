@@ -33,10 +33,10 @@ class __TwigTemplate_553f32a45f25bedf1542fe250f6e84131434b40e4856ff49df6853998ec
     {
         // line 4
         echo "
-\t\t<div class=\"col-lg-12 col-md-12 col-sm-12 col-12\">
+\t\t<div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">
 \t\t\t<div class=\"row my-2\">
 \t\t\t\t
-\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-12\">\t\t\t\t
+\t\t\t\t<div class=\"col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12\">\t\t\t\t
 \t\t\t\t\t<div class=\"card bg-dark text-primary\">
 \t\t\t\t\t\t<div class=\"card-header bg-dark\">
 \t\t\t\t\t\t\t<img src=\"";
@@ -99,11 +99,11 @@ class __TwigTemplate_553f32a45f25bedf1542fe250f6e84131434b40e4856ff49df6853998ec
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 
-\t\t\t\t<div class=\"col-lg-8 col-md-8 col-sm-12 col-12\">
+\t\t\t\t<div class=\"col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12\">
 
 \t\t\t\t<!-- search -->
 \t\t\t\t\t<div class=\"row mt-2\">
-\t\t\t\t\t\t<div class=\"col-lg-12 col-md-12 col-sm-12 col-12\">
+\t\t\t\t\t\t<div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">
 \t\t\t\t\t\t\t<div class=\"input-group mb-3\">
 \t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Search...\" id=\"searchInput\">
 \t\t\t\t\t\t\t\t<div class=\"input-group-append\"><button class=\"btn btn-primary\">SEARCH</button></div>
@@ -149,7 +149,7 @@ class __TwigTemplate_553f32a45f25bedf1542fe250f6e84131434b40e4856ff49df6853998ec
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"card-footer\">
 \t\t\t\t\t\t\t<div class=\"row justify-content-center\">
-\t\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12\">
 \t\t\t\t\t\t\t\t\t<form action=\"";
                 // line 67
                 echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
@@ -164,7 +164,7 @@ class __TwigTemplate_553f32a45f25bedf1542fe250f6e84131434b40e4856ff49df6853998ec
                 echo "/images/delete-icon.png\" style=\"height: 50px;\"></button>\t
 \t\t\t\t\t\t\t\t\t</form>
 \t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12\">
 \t\t\t\t\t\t\t\t\t<a href=\"";
                 // line 73
                 echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
@@ -174,7 +174,7 @@ class __TwigTemplate_553f32a45f25bedf1542fe250f6e84131434b40e4856ff49df6853998ec
                 echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
                 echo "/images/eye.png\" style=\"height: 50px;\"></a>
 \t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12\">
 \t\t\t\t\t\t\t\t\t<a href=\"";
                 // line 76
                 echo twig_escape_filter($this->env, ($context["URLROOT"] ?? null), "html", null, true);
@@ -226,7 +226,7 @@ class __TwigTemplate_553f32a45f25bedf1542fe250f6e84131434b40e4856ff49df6853998ec
             $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "friends", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["friend"]) {
                 // line 103
-                echo "\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-12 card bg-dark mb-1 mr-1\">
+                echo "\t\t\t\t\t\t\t<div class=\"col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 card bg-dark mb-1 mr-1\">
 \t\t\t\t\t\t\t\t<div class=\"card-header\">
 \t\t\t\t\t\t\t\t\t<h2 class=\"text-center text-primary\">";
                 // line 105
@@ -296,7 +296,7 @@ class __TwigTemplate_553f32a45f25bedf1542fe250f6e84131434b40e4856ff49df6853998ec
             $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["data"] ?? null), "likedPosts", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["likedPost"]) {
                 // line 141
-                echo "\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-12 card bg-dark mb-1 mr-1\">
+                echo "\t\t\t\t\t\t<div class=\"col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 card bg-dark mb-1 mr-1\">
 \t\t\t\t\t\t\t<div class=\"card-header text-primary\" style=\"padding: 0px; margin: 0px;\">
 \t\t\t\t\t\t\t\t<h4 class=\"text-center text-primary\">";
                 // line 143
@@ -367,10 +367,10 @@ class __TwigTemplate_553f32a45f25bedf1542fe250f6e84131434b40e4856ff49df6853998ec
 \t\t\t\t\t\t\t\t<input type=\"file\" name=\"image\" id=\"upload_image\">
 \t\t\t\t\t\t\t</div>\t\t\t\t\t
 \t\t\t\t\t\t\t<div class=\"row justify-content-center\">
-\t\t\t\t\t\t\t\t <div class=\"col-md-6\">
+\t\t\t\t\t\t\t\t <div class=\"col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12\">
 \t\t\t\t\t\t\t\t \t<input type=\"submit\" name=\"submit\" value=\"CREATE\" class=\"btn btn-info w-100\">
 \t\t\t\t\t\t\t\t </div>
-\t\t\t\t\t\t\t\t <div class=\"col-md-6\">
+\t\t\t\t\t\t\t\t <div class=\"col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12\">
 \t\t\t\t\t\t\t\t \t<button type=\"button\" class=\"btn btn-danger w-100\" data-dismiss=\"modal\">Close</button>
 \t\t\t\t\t\t\t\t </div>
 \t\t\t\t\t\t\t</div>
@@ -378,7 +378,7 @@ class __TwigTemplate_553f32a45f25bedf1542fe250f6e84131434b40e4856ff49df6853998ec
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"modal-footer\">
 \t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t<div class=\"col-md-12\" id=\"createPostMSG\">
+\t\t\t\t\t\t\t<div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\" id=\"createPostMSG\">
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>

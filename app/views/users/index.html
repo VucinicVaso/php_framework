@@ -2,10 +2,10 @@
 
 	{% block content %}
 
-		<div class="col-lg-12 col-md-12 col-sm-12 col-12">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 			<div class="row my-2">
 				
-				<div class="col-lg-4 col-md-4 col-sm-12 col-12">				
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">				
 					<div class="card bg-dark text-primary">
 						<div class="card-header bg-dark">
 							<img src="{{ URLROOT }}/{{ data.user.profile_image }}" class="profile-image">
@@ -33,11 +33,11 @@
 					</div>
 				</div>
 
-				<div class="col-lg-8 col-md-8 col-sm-12 col-12">
+				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
 
 				<!-- search -->
 					<div class="row mt-2">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-12">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 							<div class="input-group mb-3">
 								<input type="text" class="form-control" placeholder="Search..." id="searchInput">
 								<div class="input-group-append"><button class="btn btn-primary">SEARCH</button></div>
@@ -63,16 +63,16 @@
 						</div>
 						<div class="card-footer">
 							<div class="row justify-content-center">
-								<div class="col-lg-4 col-md-4 col-sm-12 col-12">
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
 									<form action="{{ URLROOT }}/posts/delete" method="post">
 										<input type="hidden" name="post_id" value="{{ post.id }}">
 										<button type="submit" class="btn btn-dark w-100"><img src="{{URLROOT}}/images/delete-icon.png" style="height: 50px;"></button>	
 									</form>
 								</div>
-								<div class="col-lg-4 col-md-4 col-sm-12 col-12">
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
 									<a href="{{URLROOT}}/posts/show/{{ post.slug }}" class="btn btn-dark w-100"><img src="{{URLROOT}}/images/eye.png" style="height: 50px;"></a>
 								</div>
-								<div class="col-lg-4 col-md-4 col-sm-12 col-12">
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
 									<a href="{{URLROOT}}/posts/edit/{{ post.id }}" class="btn btn-dark w-100"><img src="{{URLROOT}}/images/edit.png" style="height: 50px;"></a>
 								</div>
 
@@ -100,7 +100,7 @@
 					{% if data.friends %}
 						<div class="row my-1">
 						{% for friend in data.friends %}
-							<div class="col-lg-4 col-md-4 col-sm-12 col-12 card bg-dark mb-1 mr-1">
+							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 card bg-dark mb-1 mr-1">
 								<div class="card-header">
 									<h2 class="text-center text-primary">{{ friend.firstname }} {{ friend.lastname }}</h2>
 								</div>
@@ -138,7 +138,7 @@
 					{% if data.likedPosts %}
 						<div class="row my-1">
 						{% for likedPost in data.likedPosts %}
-						<div class="col-lg-4 col-md-4 col-sm-12 col-12 card bg-dark mb-1 mr-1">
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 card bg-dark mb-1 mr-1">
 							<div class="card-header text-primary" style="padding: 0px; margin: 0px;">
 								<h4 class="text-center text-primary">{{ likedPost.title }}</h4>
 							</div>
@@ -187,10 +187,10 @@
 								<input type="file" name="image" id="upload_image">
 							</div>					
 							<div class="row justify-content-center">
-								 <div class="col-md-6">
+								 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
 								 	<input type="submit" name="submit" value="CREATE" class="btn btn-info w-100">
 								 </div>
-								 <div class="col-md-6">
+								 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
 								 	<button type="button" class="btn btn-danger w-100" data-dismiss="modal">Close</button>
 								 </div>
 							</div>
@@ -198,7 +198,7 @@
 					</div>
 					<div class="modal-footer">
 						<div class="row">
-							<div class="col-md-12" id="createPostMSG">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" id="createPostMSG">
 							</div>
 						</div>
 					</div>
