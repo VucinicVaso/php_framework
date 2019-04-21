@@ -5,7 +5,6 @@
 	<li><b>twig</b> for template engine</li>
 	<li><b>illuminate/database</b> for database orm</li>
 	<li><b>aura/session</b> for sessions and CSRF</li>
-	<li><b>aura/session</b> for sessions and CSRF</li>
 	<li><b>phpunit</b> for tests</li>
 </ul>
 
