@@ -38,7 +38,7 @@
 				if($error === 0) {
 					if($fileSize <= 209272152) {
 						$fileRoot = 'images/'.$filename; /* folder to upload images */
-						move_uploaded_file($fileTMP, $_SERVER['DOCUMENT_ROOT'].'/php_mvc_2/public/'.$fileRoot);
+						move_uploaded_file($fileTMP, $_SERVER['DOCUMENT_ROOT'].'/php_mvc/public/'.$fileRoot);
 						return $fileRoot;
 					}else {
 						$GLOBALS['imageError'] = "The file size is too large.";
@@ -51,7 +51,7 @@
 
 		/* delete image */
 		public function deleteImage($image) {
-			$image_path = "C:/xampp/htdocs/php_mvc_2/public/".$image;
+			$image_path = "C:/xampp/htdocs/php_mvc/public/".$image;
 			chown($image_path, 666);
 			unlink($image_path);
 		}
