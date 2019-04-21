@@ -8,7 +8,8 @@ class User extends Model {
 
 
 	/* check if email is already in use */
-	public function checkEmail($email){
+	public function checkEmail($email)
+	{
 		$email = User::where('email', $email)->count();	
 		if($email > 0) {
 			return true;
@@ -18,7 +19,8 @@ class User extends Model {
 	}
 
 	/* check if password is already in use */
-	public function checkPassword($password_to_verify){
+	public function checkPassword($password_to_verify)
+	{
 		$passwords = User::select('password')->get();
 		foreach ($passwords as $password) {
 			while (password_verify($password_to_verify, $password->password)) {
@@ -28,7 +30,8 @@ class User extends Model {
 	}
 
 	/* login user */
-	public function login($email, $password_to_verify){
+	public function login($email, $password_to_verify)
+	{
 		$user = User::where('email', $email)->first();
 		if(!empty($user)){
 			$password_verified = password_verify($password_to_verify, $user->password);
