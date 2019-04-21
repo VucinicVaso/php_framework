@@ -35,7 +35,7 @@ window.onload = function(){
 		formData.append("confirm_password", this.confirm_password.value);
 		formData.append("__csrf_value", this.csrf_value.value);
 		
-		const sendForm = await fetch('http://localhost/php_mvc/users/register', {
+		const sendForm = await fetch(`${ADDRESS}/users/register`, {
 			method: 'post',
 			body: formData
 		}).then(response => response.json())
@@ -63,7 +63,7 @@ window.onload = function(){
 					resultData = "<div class='alert alert-danger'><p class='text-center'>"+ confirm_password_error + "</p></div>";
 					message.innerHTML += resultData;						
 				}else if(success != null){
-					resultData = "<div class='alert alert-success'><p class='text-center'>Your profile has been created. You may login now!</p><a href='http://localhost/php_mvc/users/login' class='btn btn-info' style='width: 100%;'>LOGIN HERE</a></div>";
+					resultData = `<div class='alert alert-success'><p class='text-center'>Your profile has been created. You may login now!</p><a href='${ADDRESS}/users/login' class='btn btn-info' style='width: 100%;'>LOGIN HERE</a></div>`;
 					message.innerHTML += resultData;					
 				}else {
 					alert("error");
