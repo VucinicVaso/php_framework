@@ -18,7 +18,7 @@ class Friends extends Controller {
 		if($_SERVER['REQUEST_METHOD'] == 'GET'){
 			$message = array();
 			$user    = $this->mvcFunction->checkInput($name);
-			$search  = $this->userModel::select("id", "firstname", "lastname", "profile_image")->where("firstname", "LIKE", "%$user%")->orWhere("lastname", "LIKE", "%$user%")->orWhere("username", "LIKE", "%$user%")->get();
+			$search  = $this->userModel::select("firstname", "lastname", "username", "profile_image")->where("firstname", "LIKE", "%$user%")->orWhere("lastname", "LIKE", "%$user%")->orWhere("username", "LIKE", "%$user%")->get();
 			if($search != ""){
 				$message['users'] = $search;
 			}else {
