@@ -1,4 +1,6 @@
-.gitignore
+*
+*/
+!.gitignore
 !coverImage.jpg
 !delete-icon.png
 !dislike.png
