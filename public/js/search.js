@@ -25,7 +25,7 @@ $(function(){
 									<img src="${ADDRESS}/public/${user.profile_image}" class="w-100" style="height:100px;">
 								</div>
 								<div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
-									<a href="${ADDRESS}/users/show/${user.id}" id="user" class="text-center">
+									<a href="${ADDRESS}/users/show/${user.username}" id="user" class="text-center">
 									${user.firstname} ${user.lastname}
 									</a>
 								</div>
