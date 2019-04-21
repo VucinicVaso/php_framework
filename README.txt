@@ -1,1 +1,1 @@
-##This is a simple framework build with php, mysql, composer.
+<h1>This is a simple framework build with php, mysql, composer.</h1>
