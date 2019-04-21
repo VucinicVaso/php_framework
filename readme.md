@@ -2,9 +2,9 @@
 
 <p><b>PHP libraries used for this project:</b></p>
 <ul>
-	<li>TWIG for template engine</li>
-	<li>illuminate/database for database orm</li>
-	<li>aura/session for sessions and CSRF</li>
-	<li>aura/session for sessions and CSRF</li>
-	<li>phpunit for tests</li>
+	<li><b>twig</b> for template engine</li>
+	<li><b>illuminate/database</b> for database orm</li>
+	<li><b>aura/session</b> for sessions and CSRF</li>
+	<li><b>aura/session</b> for sessions and CSRF</li>
+	<li><b>phpunit</b> for tests</li>
 </ul>
