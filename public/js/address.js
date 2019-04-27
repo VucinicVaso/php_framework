@@ -1,1 +1,1 @@
-const ADDRESS = "http://localhost/php_mvc";
+const ADDRESS = "http://localhost/php_framework";
