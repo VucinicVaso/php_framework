@@ -6,12 +6,12 @@
 	define('DB_HOST', 'localhost');
 	define('DB_USER', 'root');
 	define('DB_PASS', '');
-	define('DB_NAME', 'phpmvc2');
+	define('DB_NAME', 'phpframework');
 
 	/* App Root */
 	define('APPROOT', dirname(dirname(__FILE__)));
 	/* URL Root*/
-	define('URLROOT', 'http://localhost/php_mvc');
+	define('URLROOT', 'http://localhost/php_framework');
 	/* Site Name */
-	define("SITENAME", 'PHP_MVC');
+	define("SITENAME", 'PHP_FRAMEWORK');
 ?>
