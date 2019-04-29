@@ -51,7 +51,7 @@
 
 		/* delete image */
 		public function deleteImage($image) {
-			$image_path = "C:/xampp/htdocs/php_mvc/public/".$image;
+			$image_path = "C:/xampp/htdocs/php_framework/public/".$image;
 			chown($image_path, 666);
 			unlink($image_path);
 		}
