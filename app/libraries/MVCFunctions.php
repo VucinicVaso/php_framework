@@ -38,7 +38,7 @@
 				if($error === 0) {
 					if($fileSize <= 209272152) {
 						$fileRoot = 'images/'.$filename; /* folder to upload images */
-						move_uploaded_file($fileTMP, $_SERVER['DOCUMENT_ROOT'].'/php_mvc/public/'.$fileRoot);
+						move_uploaded_file($fileTMP, $_SERVER['DOCUMENT_ROOT'].'/php_framework/public/'.$fileRoot);
 						return $fileRoot;
 					}else {
 						$GLOBALS['imageError'] = "The file size is too large.";
